@@ -27,13 +27,35 @@ else
     space_character='='
 fi
 
+if [[ -n $2 ]]; then
+    title=$2
+else
+    title=''
+fi
+
 line=''
+
 cols=$(tput cols)
 
-for (( i=1; i<cols; i++ ))
-do
-    line+="${space_character}"
-done
+if [[ $title = '' ]]; then
+    for (( i=0; i<cols; i++ ))
+    do
+        line+="${space_character}"
+    done
+else
+    chars=$((cols-${#title}-2))
+    chars_half=$((chars/2))
+    for (( i=0; i<chars_half; i++ ))
+    do
+        line+="${space_character}"
+    done
+    line+=" ${title} "
+    remaining_chars=chars-chars_half
+    for (( i=0; i<remaining_chars; i++ ))
+    do
+        line+="${space_character}"
+    done
+fi
 
 echo -n "${line}"
 echo ""
