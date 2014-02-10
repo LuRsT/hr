@@ -23,12 +23,16 @@
 
 
 function hr {
-    for i in $(seq 1 $(tput cols));
+    space_character=$1
+    line=''
+    columns=$(tput cols)
+
+    for (( i=1; i<columns; i++ ))
     do
-        echo -n "$1";
+        line+="${space_character}"
     done
 
-    echo ""
+    echo $line
 }
 
 
@@ -36,7 +40,7 @@ if [[ -n $1 ]]; then
     space_string=$1
     string_size=${#space_string};
 
-    for char_index in $(seq 0 $(expr ${string_size} - 1));
+    for (( char_index=0; char_index<${string_size}; char_index++ ))
     do
         hr ${space_string:char_index:1}
     done
