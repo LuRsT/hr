@@ -29,22 +29,33 @@ function hr {
 
     for (( i=1; i<columns; i++ ))
     do
-        line+="${space_character}"
+        line+="${color}${space_character}\x1B[0m"
     done
 
-    echo $line
+    echo -e $line
 }
 
+color='\x1B[39m'
+space_string='='
 
-if [[ -n $1 ]]; then
-    space_string=$1
-    string_size=${#space_string};
+for var in "$@"
+do
+    case $var in
+        'black') color='\x1B[30m';;
+        'red') color='\x1B[31m';;
+        'green') color='\x1B[32m';;
+        'yellow') color='\x1B[33m';;
+        'blue') color='\x1B[34m';;
+        'magenta') color='\x1B[35m';;
+        'cyan') color='\x1B[36m';;
+        'white') color='\x1B[97m';;
+        *) space_string=$var;;
+    esac
+done
 
-    for (( char_index=0; char_index<${string_size}; char_index++ ))
-    do
-        hr ${space_string:char_index:1}
-    done
-else
-    hr "="
-fi
+string_size=${#space_string};
 
+for (( char_index=0; char_index<${string_size}; char_index++ ))
+do
+    hr ${space_string:char_index:1}
+done
