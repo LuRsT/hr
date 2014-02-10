@@ -24,7 +24,7 @@
 if [[ -n $1 ]]; then
     space_character=$1
 else
-    space_character='='
+    space_character='#'
 fi
 
 for i in $(seq 1 $(tput cols));
