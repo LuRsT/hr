@@ -27,9 +27,13 @@ else
     space_character='='
 fi
 
-for i in $(seq 1 $(tput cols));
+line=''
+cols=$(tput cols)
+
+for (( i=1; i<cols; i++ ))
 do
-    echo -n "${space_character}";
+    line+="${space_character}"
 done
 
+echo -n "${line}"
 echo ""
