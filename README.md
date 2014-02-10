@@ -25,6 +25,7 @@ Note: You should have `~/bin` in your `$PATH` for this to work.
 
     $ hr *
     ********************************** # Till the end of your terminal window
+    $
     
 That's it, no requirements, just pure old `bash` and `tput`, check the source,
 it's free.
