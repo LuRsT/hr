@@ -34,6 +34,11 @@ You can also make "beautiful" ascci patterns
     ##################################
     ----------------------------------
     $
+    
+You can also apply basic color
+
+    $ hr -#- red
+    $ hr blue
 
 That's it, no requirements, just pure old `bash` and `tput`, check the source,
 it's free.
