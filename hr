@@ -22,6 +22,9 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+color='\x1B[39m'
+space_string='='
+
 function hr {
     space_character=$1
     line=''
@@ -29,22 +32,40 @@ function hr {
 
     for (( i=1; i<columns; i++ ))
     do
-        line+="${space_character}"
+        line+="${color}${space_character}\x1B[0m"
     done
 
-    echo $line
+    echo -e $line
 }
 
+function color {
+    if [[ $1 != *[!0-9]* ]]; then
+        color="\x1B[38;5;$1m"
+    else
+        case $1 in
+            'black') color='\x1B[30m';;
+            'red') color='\x1B[31m';;
+            'green') color='\x1B[32m';;
+            'yellow') color='\x1B[33m';;
+            'blue') color='\x1B[34m';;
+            'magenta') color='\x1B[35m';;
+            'cyan') color='\x1B[36m';;
+            'white') color='\x1B[97m';;
+        esac
+    fi
+}
 
-if [[ -n $1 ]]; then
-    space_string=$1
-    string_size=${#space_string};
+while getopts “p:c:” OPTION
+do
+    case $OPTION in
+        c) color $OPTARG;;
+        p) space_string="$OPTARG";;
+    esac
+done
 
-    for (( char_index=0; char_index<${string_size}; char_index++ ))
-    do
-        hr ${space_string:char_index:1}
-    done
-else
-    hr "="
-fi
+string_size=${#space_string};
 
+for (( char_index=0; char_index<${string_size}; char_index++ ))
+do
+    hr ${space_string:char_index:1}
+done
