@@ -21,15 +21,26 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+function hr {
+    for i in $(seq 1 $(tput cols));
+    do
+        echo -n "$1";
+    done
+
+    echo ""
+}
+
+
 if [[ -n $1 ]]; then
-    space_character=$1
+    space_string=$1
+    string_size=${#space_string};
+
+    for char_index in $(seq 0 $(expr ${string_size} - 1));
+    do
+        hr ${space_string:char_index:1}
+    done
 else
-    space_character='='
+    hr "="
 fi
 
-for i in $(seq 1 $(tput cols));
-do
-    echo -n "${space_character}";
-done
-
-echo ""
