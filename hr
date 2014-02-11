@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # The MIT License (MIT)
 #
@@ -21,27 +21,27 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+hr()
+{
+    local COLS=${COLUMNS:-80}
+    local LINE=
 
-function hr {
-    word="$1"
-    line=''
-    while [[ ${#line} -lt $columns ]]; do
-        line="$line$word"
+    while (( ${#LINE} < $COLS ))
+    do
+        LINE=$LINE$1
     done
-    echo "${line:0:$columns}"
+
+    echo ${LINE:0:$COLS}
 }
 
+hrs()
+{
+    local WORD
 
-columns="$(tput cols)"
-if [[ "$columns" -lt 0 ]] ; then
-    columns=80
-fi
-
-if [[ $# > 0 ]]; then
-    for word in "$@" ; do
-        hr "$word"
+    for WORD in ${@:-#}
+    do
+        hr $WORD
     done
-else
-    hr "#"
-fi
+}
 
+[ "$0" == "$BASH_SOURCE" ] && hrs $@
