@@ -21,21 +21,24 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-hr()
-{
-    local COLS=${COLUMNS:-80}
-    local LINE=
+hr() {
+    local COLS=$(tput cols)
 
+    if [[ "$COLS" -lt 0 ]] ; then
+        COLS=80
+    fi
+
+    local WORD=$1
+    local LINE=''
     while (( ${#LINE} < $COLS ))
     do
-        LINE=$LINE$1
+        LINE=$LINE$WORD
     done
 
     echo ${LINE:0:$COLS}
 }
 
-hrs()
-{
+hrs() {
     local WORD
 
     for WORD in ${@:-#}
