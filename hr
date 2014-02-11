@@ -24,15 +24,9 @@
 
 function hr {
     space_character=$1
-    line=''
     columns=$(tput cols)
 
-    for (( i=1; i<columns; i++ ))
-    do
-        line+="${space_character}"
-    done
-
-    echo $line
+    printf "%${columns}s\n" | tr " " "$space_character"
 }
 
 
