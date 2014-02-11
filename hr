@@ -23,20 +23,20 @@
 
 
 function hr {
-    space_character=$1
-    columns=$(tput cols)
+    space_character="$1"
+    columns="$(tput cols)"
 
     printf "%${columns}s\n" | tr " " "$space_character"
 }
 
 
-if [[ -n $1 ]]; then
-    space_string=$1
+if [[ -n "$1" ]]; then
+    space_string="$1"
     string_size=${#space_string};
 
     for (( char_index=0; char_index<${string_size}; char_index++ ))
     do
-        hr ${space_string:char_index:1}
+        hr "${space_string:char_index:1}"
     done
 else
     hr "#"
