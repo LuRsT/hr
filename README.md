@@ -27,7 +27,7 @@ Note: You should have `~/bin` in your `$PATH` for this to work.
     ********************************** # Till the end of your terminal window
     $
 
-You can also make "beautiful" ascci patterns
+You can also make "beautiful" ascii patterns
 
     $ hr -#-
     ----------------------------------
