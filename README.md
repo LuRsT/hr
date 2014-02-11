@@ -18,6 +18,10 @@ Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
 
 Note: You should have `~/bin` in your `$PATH` for this to work.
 
+OSX users can install using Homebrew:
+
+    $ brew install hr
+
 ## How to use it?
 
     $ hr
