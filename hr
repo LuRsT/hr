@@ -21,21 +21,24 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+COLS="$(tput cols)"
+if [[ "$COLS" -le 0 ]] ; then
+    COLS="${COLUMNS:-80}"
+fi
+
 hr() {
-    local COLS="$(tput cols)"
-
-    if [[ "$COLS" -le 0 ]] ; then
-        COLS="${COLUMNS:-80}"
-    fi
-
     local WORD="$1"
-    local LINE=''
-    while (( ${#LINE} < "$COLS" ))
-    do
-        LINE="$LINE$WORD"
-    done
+    if [[ -z "$WORD" ]] ; then
+        echo ""
+    else
+        local LINE=''
+        while (( ${#LINE} < "$COLS" ))
+        do
+            LINE="$LINE$WORD"
+        done
 
-    echo "${LINE:0:$COLS}"
+        echo "${LINE:0:$COLS}"
+    fi
 }
 
 hrs() {
@@ -43,7 +46,6 @@ hrs() {
 
     for WORD in "${@:-#}"
     do
-        WORD="${WORD:-#}"
         hr "$WORD"
     done
 }
