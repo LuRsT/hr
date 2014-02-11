@@ -23,20 +23,23 @@
 
 
 function hr {
-    space_character="$1"
-    columns="$(tput cols)"
-
-    printf "%${columns}s\n" | tr " " "$space_character"
+    word="$1"
+    line=''
+    while [[ ${#line} -lt $columns ]]; do
+        line="$line$word"
+    done
+    echo "${line:0:$columns}"
 }
 
 
-if [[ -n "$1" ]]; then
-    space_string="$1"
-    string_size=${#space_string};
+columns="$(tput cols)"
+if [[ "$columns" -lt 0 ]] ; then
+    columns=80
+fi
 
-    for (( char_index=0; char_index<${string_size}; char_index++ ))
-    do
-        hr "${space_string:char_index:1}"
+if [[ $# > 0 ]]; then
+    for word in "$@" ; do
+        hr "$word"
     done
 else
     hr "#"

@@ -13,6 +13,7 @@ Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
 ## Setup
 
     $ curl https://raw.github.com/LuRsT/hr/master/hr > ~/bin/hr
+    (Examine ~/bin/hr)
     $ chmod +x ~/bin/hr
 
 Note: You should have `~/bin` in your `$PATH` for this to work.
@@ -27,13 +28,17 @@ Note: You should have `~/bin` in your `$PATH` for this to work.
     ********************************** # Till the end of your terminal window
     $
 
-You can also make "beautiful" ascii patterns
+You can also make "beautiful" ASCII patterns
 
-    $ hr -#-
+    $ hr - # -
     ----------------------------------
     ##################################
     ----------------------------------
-    $
+    $ hr '-#-' '-' '-#-'
+    -#--#--#--#--#--#--#--#--#--#--#--
+    ----------------------------------
+    -#--#--#--#--#--#--#--#--#--#--#--
+
 
 That's it, no requirements, just pure old `bash` and `tput`, check the source,
 it's free.
