@@ -39,6 +39,6 @@ if [[ -n $1 ]]; then
         hr ${space_string:char_index:1}
     done
 else
-    hr "="
+    hr "#"
 fi
 
