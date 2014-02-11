@@ -22,29 +22,24 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-function hr {
-    space_character="$1"
-    line=''
-    columns="$(tput cols)"
-
-    for (( i=1; i<columns; i++ ))
-    do
-        line+="${space_character}"
-    done
-
-    echo "$line"
-}
-
-
-if [[ -n "$1" ]]; then
-    space_string="$1"
-    string_size=${#space_string};
-
-    for (( char_index=0; char_index<${string_size}; char_index++ ))
-    do
-        hr "${space_string:char_index:1}"
-    done
-else
-    hr "="
+columns="$(tput cols)"
+if [[ "$columns" -lt 0 ]] ; then
+    columns=80
 fi
 
+function hr {
+    word="$1"
+    line=''
+    while [[ ${#line} -lt $columns ]]; do
+        line="$line$word"
+    done
+    echo "${line:0:$columns}"
+}
+
+if [[ $# = 0 ]]; then
+    hr "="
+else
+    for word in "$@" ; do
+        hr "$word"
+    done
+fi
