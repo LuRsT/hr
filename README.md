@@ -34,7 +34,7 @@ OSX users can install using Homebrew:
 
 You can also make "beautiful" ASCII patterns
 
-    $ hr - # -
+    $ hr - '#' -
     ----------------------------------
     ##################################
     ----------------------------------
