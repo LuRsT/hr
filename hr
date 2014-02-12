@@ -22,8 +22,16 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 COLS="$(tput cols)"
+LOCALE="$(locale charmap)"
+
 if [[ "$COLS" -le 0 ]] ; then
     COLS="${COLUMNS:-80}"
+fi
+
+if [[ "$LOCALE" = 'UTF-8' ]] ; then
+    BASECHAR="$(echo -e "\u2014")"
+else
+    BASECHAR="#"
 fi
 
 hr() {
@@ -42,7 +50,7 @@ hr() {
 hrs() {
     local WORD
 
-    for WORD in "${@:-#}"
+    for WORD in "${@:-$BASECHAR}"
     do
         hr "$WORD"
     done
