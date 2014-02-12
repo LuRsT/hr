@@ -29,12 +29,9 @@ fi
 hr() {
     local WORD="$1"
     if [[ -n "$WORD" ]] ; then
-        local LINE=''
-        while (( ${#LINE} < "$COLS" ))
-        do
-            LINE="$LINE$WORD"
-        done
-
+        local -i repeat=1
+        ((repeat+=${COLS}/${#WORD}))
+        local LINE=$(eval printf "${WORD}%.0s" {1..${repeat}})
         echo "${LINE:0:$COLS}"
     fi
 }
