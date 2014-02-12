@@ -28,9 +28,7 @@ fi
 
 hr() {
     local WORD="$1"
-    if [[ -z "$WORD" ]] ; then
-        echo ""
-    else
+    if [[ -n "$WORD" ]] ; then
         local LINE=''
         while (( ${#LINE} < "$COLS" ))
         do
