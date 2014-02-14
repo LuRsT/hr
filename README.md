@@ -25,7 +25,7 @@ OSX users can install using Homebrew:
 ## How to use it?
 
     $ hr
-    ================================== # Till the end of your terminal window
+    ################################## # Till the end of your terminal window
     $
 
     $ hr '*'
