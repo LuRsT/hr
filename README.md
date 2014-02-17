@@ -47,3 +47,13 @@ You can also make "beautiful" ASCII patterns
 That's it, no requirements, just pure old `bash` and `tput`, check the source,
 it's free.
 
+## Alternative `hr`s
+
+Don't like bash? Don't worry, some developers made `hr` in their language of
+choice, check them out:
+
+* https://github.com/jaredsohn/hr
+* https://github.com/euangoddard/hr.py
+
+NOTE: Do send me a pull request if you made another implementation of `hr` in
+another language to add it to the list.
