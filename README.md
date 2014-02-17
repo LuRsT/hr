@@ -18,6 +18,12 @@ Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
 
 Note: You should have `~/bin` in your `$PATH` for this to work.
 
+Or it can be installed using [Jean](http://github.com/ziyaddin/jean):
+
+```sh
+    $ jean install LuRsT/hr
+```
+
 OSX users can install using Homebrew:
 
     $ brew install hr
