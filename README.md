@@ -52,9 +52,9 @@ it's free.
 Don't like bash? Don't worry, some developers made `hr` in their language of
 choice, check them out:
 
-* https://github.com/jaredsohn/hr
-* https://github.com/euangoddard/hr.py
-* https://github.com/ivantsepp/hr
+* https://github.com/jaredsohn/hr (Javascript/node.js)
+* https://github.com/euangoddard/hr.py (Python)
+* https://github.com/ivantsepp/hr (Ruby)
 
 NOTE: Do send me a pull request if you've made another implementation of `hr` in
 another language to add it to the list.
