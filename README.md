@@ -54,6 +54,7 @@ choice, check them out:
 
 * https://github.com/jaredsohn/hr
 * https://github.com/euangoddard/hr.py
+* https://github.com/ivantsepp/hr
 
 NOTE: Do send me a pull request if you've made another implementation of `hr` in
 another language to add it to the list.
