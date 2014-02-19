@@ -30,7 +30,7 @@ Note: You should have `~/bin` in your `$PATH` for this to work.
 Open `Makefile` and edit the `PREFIX` variable, specifying the directory
 where you'd want the software to reside. Then:
 
-    $ make install
+    $ sudo make install
 
 ### OSX
 
