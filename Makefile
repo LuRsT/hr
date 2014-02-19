@@ -1,5 +1,6 @@
-prefix = /usr/local
+PREFIX="/usr/local"
 
 install:
-        cp hr $(prefix)/bin/
-        cp hr.1 $(prefix)/man/man1/
+		cp hr $(PREFIX)/bin/
+		mkdir -p $(PREFIX)/man/man1/
+		cp hr.1 $(PREFIX)/man/man1/

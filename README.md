@@ -12,13 +12,27 @@ Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
 
 ## Setup
 
+### Linux
+
+#### Quick install
+
+    $ curl https://raw.github.com/LuRsT/hr/master/hr > ~/bin/hr
+    (Examine ~/bin/hr)
+    $ chmod +x ~/bin/hr
+
+Note: You should have `~/bin` in your `$PATH` for this to work.
+
+#### Complete install
+
     $ git clone git@github.com:LuRsT/hr.git
     $ cd hr
 
-open **Makefile** and edit the **prefix** variable, specifying the directory
-where you'd want the software to reside. Then
+Open `Makefile` and edit the `PREFIX` variable, specifying the directory
+where you'd want the software to reside. Then:
 
     $ make install
+
+### OSX
 
 OSX users can install using Homebrew:
 
