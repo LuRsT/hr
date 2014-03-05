@@ -72,6 +72,7 @@ choice, check them out:
 * https://github.com/euangoddard/hr.py (Python)
 * https://github.com/ivantsepp/hr (Ruby)
 * https://github.com/bit-shift/hr-hs (Haskell)
+* https://github.com/xuxiaodong/hr (Perl)
 
 NOTE: Do send me a pull request if you've made another implementation of `hr` in
 another language to add it to the list.
