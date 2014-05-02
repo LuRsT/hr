@@ -16,7 +16,7 @@ Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
 
 #### Quick install
 
-    $ curl https://raw.github.com/LuRsT/hr/master/hr > ~/bin/hr
+    $ curl https://raw.githubusercontent.com/LuRsT/hr/master/hr > ~/bin/hr
     (Examine ~/bin/hr)
     $ chmod +x ~/bin/hr
 
