@@ -34,15 +34,15 @@ hr() {
         do
             LINE="$LINE$WORD"
         done
-
-        echo "${LINE:0:$COLS}"
+        MY_CLR="\e[90m"
+        echo -e $MY_CLR"${LINE:0:$COLS}"
     fi
 }
 
 hrs() {
     local WORD
 
-    for WORD in "${@:-#}"
+    for WORD in "${@:-─}"
     do
         hr "$WORD"
     done
