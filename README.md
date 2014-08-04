@@ -75,6 +75,7 @@ choice, check them out:
 * https://github.com/xuxiaodong/hr (Perl)
 * https://github.com/ajkerrigan/pshr (Powershell)
 * https://github.com/HalosGhost/.bin/blob/master/src/hr.c (C)
+* https://github.com/djmattyg007/hr (C) (takes integer argument for number of lines, rather than allowing choice of characters)
 
 NOTE: Do send me a pull request if you've made another implementation of `hr` in
 another language to add it to the list.
