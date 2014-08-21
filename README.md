@@ -1,82 +1,45 @@
-hr
-==
+hr_python
+==========
 
-`<hr />` for your terminal
-
+Horizontal rule for your terminal - in python!
 
 Tired of not finding things in your terminal because there's a lot of logs and
 garbage? Tired of destroying the Enter key by creating a "void zone" in your
 terminal so that you can see the error that you're trying to debug?
 
-Use the old `<hr />` tag, but in your terminal. How? Allow me to explain:
+Use the old `<hr />` tag, but in your terminal.
+
+## Inspiration
+The original version can be found in  (https://github.com/euangoddard/hr.py.git). 
+I thought to add some functionality, that I wished to add. 
+Most of time for me, writing the task while doing it, makes me more clear about the goals and while I'm doing some stupid things, my note reminds me of it.
 
 ## Setup
 
-### Linux
+    $ pip install git+git://github.com/sumit007/hr_python.git
 
-#### Quick install
-
-    $ curl https://raw.githubusercontent.com/LuRsT/hr/master/hr > ~/bin/hr
-    (Examine ~/bin/hr)
-    $ chmod +x ~/bin/hr
-
-Note: You should have `~/bin` in your `$PATH` for this to work.
-
-#### Complete install
-
-    $ git clone git@github.com:LuRsT/hr.git
-    $ cd hr
-
-Open `Makefile` and edit the `PREFIX` variable, specifying the directory
-where you'd want the software to reside. Then:
-
-    $ sudo make install
-
-### OSX
-
-OSX users can install using Homebrew:
-
-    $ brew install hr
 
 ## How to use it?
 
+### From the command-line:
+
     $ hr
-    ################################## # Till the end of your terminal window
+    ================================== Till the end of your terminal window
     $
 
-    $ hr '*'
+    $ hr -s '*'
     ********************************** # Till the end of your terminal window
     $
 
-You can also make "beautiful" ASCII patterns
 
-    $ hr - '#' -
-    ----------------------------------
-    ##################################
-    ----------------------------------
-    $ hr '-#-' '-' '-#-'
-    -#--#--#--#--#--#--#--#--#--#--#--
-    ----------------------------------
-    -#--#--#--#--#--#--#--#--#--#--#--
+### You can mention the "task name" which you want to saperate out
+    
+    $ hr -n "Task name" 
+    ========  Task name===============
+    
+    $hr -n "OpenShift and python" -s "#"
+    ###### OpenShift in python########  #Till the end of your terminal window    
 
+## Requirements
 
-That's it, no requirements, just pure old `bash` and `tput`, check the source,
-it's free.
-
-## Alternative `hr`s
-
-Don't like bash? Don't worry, some developers made `hr` in their language of
-choice, check them out:
-
-* https://github.com/jaredsohn/hr (Javascript/node.js)
-* https://github.com/euangoddard/hr.py (Python)
-* https://github.com/ivantsepp/hr (Ruby)
-* https://github.com/bit-shift/hr-hs (Haskell)
-* https://github.com/xuxiaodong/hr (Perl)
-* https://github.com/ajkerrigan/pshr (Powershell)
-* https://github.com/HalosGhost/.bin/blob/master/src/hr.c (C)
-* https://github.com/djmattyg007/hr (C) (takes integer argument for number of lines, rather than allowing choice of characters)
-* https://github.com/lurst/hr.jl (Julia)
-
-NOTE: Do send me a pull request if you've made another implementation of `hr` in
-another language to add it to the list.
+The only requirement is python (tested in python 2.7)
