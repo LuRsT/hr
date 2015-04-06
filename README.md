@@ -78,6 +78,7 @@ choice, check them out:
 * https://github.com/djmattyg007/hr (C) (takes integer argument for number of lines, rather than allowing choice of characters)
 * https://github.com/lurst/hr.jl (Julia)
 * https://github.com/chilicuil/shundle-plugins/blob/master/aliazator/aliases/default/general.aliases#L21 (Posix sh alias)
+* https://github.com/hasit/gohr (Go)
 
 NOTE: Do send me a pull request if you've made another implementation of `hr` in
 another language to add it to the list.
