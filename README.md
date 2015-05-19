@@ -72,6 +72,7 @@ choice, check them out:
 * https://github.com/euangoddard/hr.py (Python)
 * https://github.com/ivantsepp/hr (Ruby)
 * https://github.com/bit-shift/hr-hs (Haskell)
+* https://github.com/HalosGhost/hs/blob/master/HR.hs (Haskell; avoids both shelling out and depending on ncurses)
 * https://github.com/xuxiaodong/hr (Perl)
 * https://github.com/ajkerrigan/pshr (Powershell)
 * https://github.com/HalosGhost/.bin/blob/master/src/hr.c (C)
