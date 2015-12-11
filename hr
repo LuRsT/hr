@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+### hr ###
+# A horizontal ruler for your terminal
+# From https://github.com/LuRsT/hr
+
 # The MIT License (MIT)
 #
 # Copyright (c) 2014 Gil Gonçalves
