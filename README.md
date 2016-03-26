@@ -63,24 +63,6 @@ You can also make "beautiful" ASCII patterns
 That's it, no requirements, just pure old `bash` and `tput`, check the source,
 it's free.
 
-## Alternative `hr`s
+## More
 
-Don't like bash? Don't worry, some developers made `hr` in their language of
-choice, check them out:
-
-* https://github.com/jaredsohn/hr (Javascript/node.js)
-* https://github.com/euangoddard/hr.py (Python)
-* https://github.com/ivantsepp/hr (Ruby)
-* https://github.com/bit-shift/hr-hs (Haskell)
-* https://github.com/HalosGhost/hs/tree/master/hr (Haskell; avoids both shelling out and depending on ncurses)
-* https://github.com/xuxiaodong/hr (Perl)
-* https://github.com/ajkerrigan/pshr (Powershell)
-* https://github.com/HalosGhost/.bin/blob/master/src/hr.c (C)
-* https://github.com/djmattyg007/hr (C) (takes integer argument for number of lines, rather than allowing choice of characters)
-* https://github.com/lurst/hr.jl (Julia)
-* https://github.com/chilicuil/shundle-plugins/blob/master/aliazator/aliases/default/general.aliases#L21 (Posix sh alias)
-* https://github.com/hasit/gohr (Go)
-* https://github.com/dodecahedral-champion/hr.lua (Lua)
-
-NOTE: Do send me a pull request if you've made another implementation of `hr` in
-another language to add it to the list.
+Check out more information in `hr`s [wiki](https://github.com/LuRsT/hr/wiki)
