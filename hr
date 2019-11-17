@@ -28,15 +28,14 @@ fi
 
 hr() {
     local WORD="$1"
-    if [[ -n "$WORD" ]] ; then
-        local LINE=''
-        while (( ${#LINE} < COLS ))
-        do
-            LINE="$LINE$WORD"
-        done
+    local LINE=''
 
-        echo "${LINE:0:$COLS}"
+    if [[ -z "$WORD" ]] ; then
+        return;
     fi
+
+    printf -v LINE '%*s' "$COLS"
+    echo "${LINE// /${WORD}}"
 }
 
 hrs() {
