@@ -35,7 +35,8 @@ hr() {
     fi
 
     printf -v LINE '%*s' "$COLS"
-    echo "${LINE// /${WORD}}"
+    LINE="${LINE// /${WORD}}"
+    echo "${LINE:0:${COLS}}"
 }
 
 hrs() {
