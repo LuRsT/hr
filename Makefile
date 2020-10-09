@@ -2,7 +2,7 @@
 # <hr /> for your terminal
 
 PREFIX=/usr/local
-MANPREFIX=/usr/local
+MANPREFIX=/usr/local/share
 
 install:
 	cp hr $(PREFIX)/bin/hr
