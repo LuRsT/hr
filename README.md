@@ -1,8 +1,6 @@
 hr
 ==
 
-[![](https://img.shields.io/badge/SayThanks.io-☼-1EAEDB.svg)](https://saythanks.io/to/lurst)
-
 A horizontal ruler for your terminal
 
 Tired of not finding things in your terminal because there's a lot of logs and
