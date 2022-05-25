@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # The MIT License (MIT)
 #
@@ -22,30 +22,23 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 COLS="$(tput cols)"
-if (( COLS <= 0 )) ; then
+if [ "$COLS" -le 0 ] ; then
     COLS="${COLUMNS:-80}"
 fi
 
 hr() {
-    local WORD="$1"
-    local LINE=''
-
-    if [[ -z "$WORD" ]] ; then
-        return;
+    if [ -z "$1" ] ; then
+        return
     fi
 
-    printf -v LINE '%*s' "$COLS"
-    LINE="${LINE// /${WORD}}"
-    echo "${LINE:0:${COLS}}"
+    printf '%*s' "$COLS" ' ' | sed "s/ /$1/g" | grep -o "^.\{$COLS\}"
 }
 
 hrs() {
-    local WORD
-
     for WORD in "${@:-#}"
     do
         hr "$WORD"
     done
 }
 
-[ "$0" == "$BASH_SOURCE" ] && hrs "$@"
+hrs "$@"
