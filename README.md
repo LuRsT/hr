@@ -57,7 +57,7 @@ You can also make "beautiful" ASCII patterns
     -#--#--#--#--#--#--#--#--#--#--#--
 
 
-That's it, no requirements, just pure old `bash` and `tput`, check the source,
+That's it, no requirements, just pure old POSIX shell and `tput`, check the source,
 it's free.
 
 ## More
